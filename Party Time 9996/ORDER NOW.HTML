@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - PARTY TIME</title>
+    
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="https://img.freepik.com/premium-vector/party-time-template_767194-250.jpg" alt="Party Time Logo" class="h-20 w-20">
+                <span class="ml-2 text-3xl font-serif text-green-700">PARTY TIME</span>
+            </a>
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="home.html" class="text-pink-600 hover:text-yellow-400">Home</a>
+                <a href="menu.html" class="text-blue-600 hover:text-yellow-400">Menu</a>
+                <a href="about.html" class="text-red-900 hover:text-yellow-400">About</a>
+                <a href="contact.html" class="text-gray-600 hover:text-yellow-400">Contact</a>
+            </nav>
+            <!-- Call to Action Button -->
+            <a href="ORDER NOW.HTML" class="hidden md:block bg-yellow-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full">Order Now</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+        <nav class="bg-white shadow-md">
+            <a href="home.html" class="block px-4 py-2 text-pink-600 hover:bg-yellow-100">Home</a>
+            <a href="menu.html" class="block px-4 py-2 text-blue-600 hover:bg-yellow-100">Menu</a>
+            <a href="about.html" class="block px-4 py-2 text-red-900 hover:bg-yellow-100">About</a>
+            <a href="contact.html" class="block px-4 py-2 text-gray-600 hover:bg-yellow-100">Contact</a>
+            <a href="ORDER NOW.HTML" class="block px-4 py-2 bg-yellow-500 text-white text-center font-bold hover:bg-red-600">Order Now</a>
+        </nav>
+    </div>
+
+    <!-- Order Now Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-6xl font-bold text-gray-800 mb-12 text-center">Order Now</h2>
+            
+            <form action="submit_order.php" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Place Your Order</h2>
+            
+                <!-- Item Selection (Example with Burger) -->
+                <div class="mb-4">
+                    <label for="burger" class="block text-gray-700 font-bold mb-2">Burger:</label>
+                    <input type="number" id="burger" name="burger_quantity" class="border border-gray-300 rounded px-3 py-2 w-16 text-gray-700">
+                </div>
+            
+                <!-- Additional Items (Example with Pizza) -->
+                <div class="mb-4">
+                    <label for="pizza" class="block text-gray-700 font-bold mb-2">Pizza:</label>
+                    <input type="number" id="pizza" name="pizza_quantity" class="border border-gray-300 rounded px-3 py-2 w-16 text-gray-700">
+                </div>
+            
+                <!-- Contact Information -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>
+                    <input type="text" id="name" name="customer_name" class="border border-gray-300 rounded px-3 py-2 w-full text-gray-700">
+                </div>
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 font-bold mb-2">Phone Number:</label>
+                    <input type="text" id="phone" name="phone_number" class="border border-gray-300 rounded px-3 py-2 w-full text-gray-700">
+                </div>
+            
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full">Submit Order</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="bg-gray-200 py-6">
+        <div class="container mx-auto flex justify-center items-center">
+            <a href="https://www.instagram.com/ravisen9996/" class="text-gray-600 hover:text-gray-900 mx-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 mx-3"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/whatsappphonenumber" class="text-gray-600 hover:text-gray-900 mx-3"><i class="fab fa-whatsapp"></i></a>
+            <!-- Replace 'whatsappphonenumber' with your actual WhatsApp phone number -->
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Fast Food Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body> <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.querySelector('.md:hidden button');
+        const mobileNav = document.querySelector('.md:hidden nav');
+
+        menuBtn.addEventListener('click', function() {
+            mobileNav.classList.toggle('hidden');
+        });
+    });
+</script>
+
+
+</html>

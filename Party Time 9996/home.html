@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARTY TIME</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Customize styles here */
+        .box {
+            background-color: #F3C10D; /* Yellow background */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .box:hover {
+            background-color: #F45B69; /* Red background on hover */
+        }
+
+        .text-button {
+            color: #FFFFFF; /* White text color */
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="home.html" class="flex items-center">
+                <img src="https://img.freepik.com/premium-vector/party-time-template_767194-250.jpg" alt="Party Time Logo" class="h-20 w-20">
+                <span class="ml-2 text-3xl font-serif text-green-700">PARTY TIME</span>
+            </a>
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex space-x-6">
+                <button class="box" onclick="window.location.href='home.html'">
+                    <p class="text-button">Home</p>
+                </button>
+                <button class="box" onclick="window.location.href='menu.html'">
+                    <p class="text-button">Menu</p>
+                </button>
+                <button class="box" onclick="window.location.href='about.html'">
+                    <p class="text-button">About</p>
+                </button>
+                <button class="box" onclick="window.location.href='contact.html'">
+                    <p class="text-button">Contact</p>
+                </button>
+                <button class="box" onclick="window.location.href='mainwebsite.html'">
+                    <p class="text-button">WEBSITE STARTING DEMO</p>
+                </button>
+            </nav>
+            <!-- Call to Action Button -->
+            <a href="order.html" class="hidden md:block bg-yellow-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full">Order Now</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+        <nav class="bg-white shadow-md">
+            <button class="box" onclick="window.location.href='home.html'">
+                <p class="text-button">Home</p>
+            </button>
+            <button class="box" onclick="window.location.href='menu.html'">
+                <p class="text-button">Menu</p>
+            </button>
+            <button class="box" onclick="window.location.href='about.html'">
+                <p class="text-button">About</p>
+            </button>
+            <button class="box" onclick="window.location.href='contact.html'">
+                <p class="text-button">Contact</p>
+            </button>
+            <button class="box" onclick="window.location.href='order.html'">
+                <p class="text-button">Order Now</p>
+            </button>
+            <button class="box" onclick="window.location.href='mainwebsite.html'">
+                <p class="text-button">WEBSITE STARTING DEMO</p>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-800 text-white py-20">
+        <div class="container mx-auto px-4 flex items-center justify-center">
+            <div class="max-w-3xl text-center">
+                <h1 class="text-5xl font-bold mb-6 leading-tight">Delicious Fast Food, Delivered Fast</h1>
+                <p class="text-lg mb-8">Order from our mouth-watering menu and enjoy quick delivery to your doorstep.</p>
+                <a href="order.html" class="bg-yellow-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full inline-block">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-6xl font-bold text-gray-800 mb-12 text-center">Our Menu</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item Example - Burger -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/3b/9a/d2/burger-king.jpg" alt="Burger" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-5">Classic Cheeseburger</h3>
+                        <p class="text-gray-600 mb-3">Burger bliss: Classic comfort, savory patty nestled in soft bun</p>
+                        <p class="text-gray-800 font-bold  ">₹ 150</p>
+                        <button class="block mt-4 bg-yellow-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded text-center add-to-cart" data-name="Classic Cheeseburger" data-price="150">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Menu Item Example - Pizza -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLxHzW_cJjdwHQBEnG6U16qWAOTnls63YYpo3EkIC-J746SeD2Ohnk8RwHgaB4Y_qOqpw&usqp=CAU" alt="Pizza" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-5">Delicious Pizza</h3>
+                        <p class="text-gray-600 mb-4">Slice of joy: Pizza, cheesy delight that satisfies cravings worldwide.</p>
+                        <p class="text-gray-800 font-bold">₹ 100</p>
+                        <button class="block mt-4 bg-yellow-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded text-center add-to-cart" data-name="Delicious Pizza" data-price="100">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Menu Item Example - Pasta -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://img.freepik.com/free-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-19739.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1718755200&semt=sph/1000*1000" alt="Pasta" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-5">Delicious Pasta</h3>
+                        <p class="text-gray-600 mb-4">Pasta perfection: Delicious pasta with rich sauce.</p>
+                        <p class="text-gray-800 font-bold">₹ 200</p>
+                        <button class="block mt-4 bg-yellow-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded text-center add-to-cart" data-name="Delicious Pasta" data-price="200">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Repeat menu items for other products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="bg-gray-200 py-6">
+        <div class="container mx-auto flex justify-center items-center">
+            <a href="https://www.instagram.com/ravisen9996/" class="text-gray-600 hover:text-gray-900 mx-3"><i class="fab fa-instagram "></i></a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 mx-3"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/whatsappphonenumber" class="text-gray-600 hover:text-gray-900 mx-3"><i class="fab fa-whatsapp"></i></a>
+            <!-- Replace 'whatsappphonenumber' with your actual WhatsApp phone number -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Fast Food Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        // Function to handle adding items to the cart
+        function addToCart(name, price) {
+            let cartItem = {
+                name: name,
+                price: price
+            };
+        
+            // Retrieve existing cart items from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+        
+            // Save updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+        
+            // Update cart display
+            updateCartDisplay();
+        }
+        
+        // Function to update cart display in the cart page
+        function updateCartDisplay() {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartList = document.getElementById('cart-items');
+        
+            // Clear previous items
+            cartList.innerHTML = '';
+        
+            // Display each item in the cart
+            cartItems.forEach(item => {
+                let listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - ₹ ${item.price}`;
+                cartList.appendChild(listItem);
+            });
+        }
+        
+        // Event listener for Add to Cart buttons
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                let name = this.getAttribute('data-name');
+                let price = parseFloat(this.getAttribute('data-price'));
+                addToCart(name, price);
+            });
+        });
+        
+        // Event listener for Checkout button
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            // Redirect to checkout page or handle checkout process here
+            // Example: window.location.href = 'checkout.html';
+            alert('Redirect to checkout page');
+        });
+        
+        // Initialize cart display on page load
+        updateCartDisplay();
+    </script>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>

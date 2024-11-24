@@ -1,0 +1,41 @@
+<div class="order-form ">
+                <a href="https://royalfirdous.com/"> 
+                     
+                    <center><img src="https://d2mhjbbt909gve.cloudfront.net/1623169685_1601216765151_trimmed.png" class="img-fluid home-logo" alt="logo logo-mobile"></center> 
+                </a>
+                <!--<h4>How to get your order?</h4>-->
+                                <div class="row deliveryprefdiv pt-3" style="display:show;">
+                                                <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 col-xl-12 col-12">
+                    <div class="">
+                    <div class="custom-control custom-radio addresstyperadio white-bg home-delivery">
+                        <input name="delivery_pref" value="homeDelivery" id="home_delivery" type="radio" class="custom-control-input pref_type" checked="checked">
+                        <label class="custom-control-label" for="home_delivery">Home Delivery</label>
+                    </div>
+                    </div>
+                </div>
+                                </div><!--end of row-->
+                                    <h4 class="pt-3 pb-2 detectdiv lablesearch">Recent Search</h4>
+                                <div class="row detectdiv autocompleteparent">
+                    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 col-xl-12 col-12">
+                        <div class="form-group d-flex">
+                        <input type="text" name="landmark" class="form-control item_search_txt search-location-input detectdivdisplay" placeholder="Enter Your Apartment Name, Street Name" id="searchaddressqueryinput" style="width: 84%;display: inline;" readonly="readonly" fdprocessedid="qewi6">
+                        <div id="searchaddressquerydata"></div>
+                        <div class="input-group-append updatebuttondetect" style="display: inline;"><button class="btn btn-search waves-effect waves-light search-loaction-btn changelocation colorcodeclass change-location-login-btn" type="button" fdprocessedid="js4azi"><span>Change Location</span></button></div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="branchprocess" id="branchprocess" value="1">
+                <div class="row dynamiccontent"><div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 col-xl-12 col-12"><div class="form-group form-control-div select-dropdown select-branch-drop branchdiv"><select class="form-control" id="branchselectionnew" name="branch" required="" fdprocessedid="32m1ht"><option value="ecro7sqz" data-id="20534" id="branch_ecro7sqz" data-rads="5.332461671976703">Firdous since 1979</option></select></div></div></div><!--end of row-->
+                
+                <div class="row justify-content-center slider-button">
+                                                      <button type="submit" class="btn btn-primary btn-lg ml-2 mr-4 colorcodeclass waves-effect waves-light" id="ordernowbtn" style="" fdprocessedid="dy3i6f"> 
+                    <span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="37.187" height="24.832" viewBox="0 0 37.187 24.832"><defs><style>.a{fill:#fff;}</style></defs><path class="a" d="M11.122,47.047v2.869H48.309V47.047Zm35.224-3.755a16.873,16.873,0,0,0-15.2-16.235V25.084H28.281v1.973a16.873,16.873,0,0,0-15.2,16.235l-.068,1.5h33.4ZM16.1,41.923A13.907,13.907,0,0,1,29.715,29.86a13.907,13.907,0,0,1,13.62,12.062Z" transform="translate(-11.122 -25.084)"></path></svg>
+                    </span>
+                    <span class="text"> Order Now</span>
+                  </button>
+                                                    </div>
+                                 <div class="alert-div alert alert-danger groceryslotalert"><span>No slot available right now.</span></div>
+                 <div class="alert-div alert alert-danger chooserest" style="display: none;"><span>Please choose restaurant you want to order.</span></div>
+                 
+            </div>

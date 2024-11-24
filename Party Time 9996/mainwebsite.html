@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - PARTY TIME</title>
+
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .social-icon {
+            font-size: 1.5rem;
+        }
+
+        .social-icon:hover {
+            color: #1a202c;
+        }
+
+        /* Additional styles as needed */
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="https://img.freepik.com/premium-vector/party-time-template_767194-250.jpg"
+                    alt="Party Time Logo" class="h-20 w-20">
+                <span class="ml-2 text-3xl font-serif text-green-700">PARTY TIME</span>
+            </a>
+
+            <!-- Home Button -->
+            <a href="home.html"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full text-sm">Home</a>
+        </div>
+    </header>
+
+    <!-- Order Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-6xl font-bold text-gray-800 mb-12 text-center">Order Your Meal</h2>
+
+            <!-- Delivery Form -->
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                <form id="deliveryForm">
+                    <!-- Delivery Option -->
+                    <div class="mb-6">
+                        <label for="deliveryOption" class="block text-gray-800 font-bold mb-2">Delivery
+                            Option</label>
+                        <select id="deliveryOption" name="deliveryOption"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <option value="homeDelivery">HOME DELIVERY</option>
+                            <option value="pickup">PICKUP</option>
+                            <!-- Add other delivery options as needed -->
+                        </select>
+                    </div>
+
+                    <!-- Location Input -->
+                    <div class="mb-6">
+                        <label for="location" class="block text-gray-800 font-bold mb-2">Search Your Delivery
+                            Location</label>
+                        <input type="text" id="location" name="location" list="location-list"
+                            placeholder="Enter your location"
+                            class="block w-full mt-1 py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500">
+                        <datalist id="location-list"></datalist>
+                    </div>
+
+                    <!-- Branch Selection -->
+                    <div class="mb-6" id="branchSelection" style="display: none;">
+                        <label for="branch" class="block text-gray-800 font-bold mb-2">Select Your Branch</label>
+                        <select id="branch" name="branch"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <!-- Options will be dynamically populated -->
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitBtn"
+                        class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full">Check
+                        Availability</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="bg-gray-200 py-6">
+        <div class="container mx-auto flex justify-center items-center">
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/ravisen9996/" target="_blank"
+                class="text-gray-600 hover:text-gray-900 mx-3 social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- Facebook Icon -->
+            <a href="#" target="_blank" class="text-gray-600 hover:text-gray-900 mx-3 social-icon">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- WhatsApp Icon -->
+            <a href="https://wa.me/whatsappphonenumber" target="_blank"
+                class="text-gray-600 hover:text-gray-900 mx-3 social-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- Replace 'whatsappphonenumber' with your actual WhatsApp phone number -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Fast Food Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Auto-select "HOME DELIVERY" option on page load
+            document.getElementById('deliveryOption').value = 'homeDelivery';
+
+            // Form submission handling
+            document.getElementById('deliveryForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // Get input values
+                const location = document.getElementById('location').value;
+                const deliveryOption = document.getElementById('deliveryOption').value;
+
+                // Perform validation (this is a simplified example)
+                if (location.trim() === '') {
+                    alert('Please enter a location.');
+                    return;
+                }
+
+                // Check if delivery is available in the entered location
+                if (isDeliveryPossible(location)) {
+                    // Show branch selection if applicable
+                    showBranchSelection(location);
+                } else {
+                    // If delivery is not available, update button text
+                    document.getElementById('submitBtn').textContent = 'Not Available Now';
+                    // Optionally, disable the button: document.getElementById('submitBtn').disabled = true;
+                    alert('Delivery is not available in your area yet.');
+                }
+            });
+
+            // Input field event handling for dynamic location suggestions
+            document.getElementById('location').addEventListener('input', function () {
+                const searchValue = this.value.trim().toLowerCase();
+                const matchingLocations = filterLocations(searchValue);
+
+                // Display matching locations
+                displayLocations(matchingLocations);
+
+                // Hide branch selection when changing location
+                hideBranchSelection();
+            });
+        });
+
+        // Function to show branch selection based on location
+        function showBranchSelection(location) {
+            const branchSelection = document.getElementById('branchSelection');
+            const branchSelect = document.getElementById('branch');
+
+            // Logic to populate branch options based on location
+            if (location.toLowerCase() === 'bijoliya') {
+                branchSelect.innerHTML = ''; // Clear previous options if any
+                const bijoliyaBranches = [
+                    { name: 'Branch 1', value: 'branch1' },
+                    { name: 'Branch 2', value: 'branch2' },
+                    // Add more branches for Bijoliya as needed
+                ];
+
+                bijoliyaBranches.forEach(branch => {
+                    const option = document.createElement('option');
+                    option.value = branch.value;
+                    option.textContent = branch.name;
+                    branchSelect.appendChild(option);
+                });
+
+                // Show the branch selection
+                branchSelection.style.display = 'block';
+            } else if (location.toLowerCase() === 'dabi') {
+                // Logic for Dabi branches
+                // Example:
+                branchSelect.innerHTML = ''; // Clear previous options if any
+                const dabiBranches = [
+                    { name: 'Dabi Branch 1', value: 'dabi1' },
+                    { name: 'Dabi Branch 2', value: 'dabi2' },
+                    // Add more branches for Dabi as needed
+                ];
+
+                dabiBranches.forEach(branch => {
+                    const option = document.createElement('option');
+                    option.value = branch.value;
+                    option.textContent = branch.name;
+                    branchSelect.appendChild(option);
+                });
+
+                // Show the branch selection
+                branchSelection.style.display = 'block';
+            } else {
+                // Hide branch selection if location doesn't match
+                hideBranchSelection();
+            }
+        }
+
+        // Function to hide branch selection
+        function hideBranchSelection() {
+            const branchSelection = document.getElementById('branchSelection');
+            branchSelection.style.display = 'none';
+        }
+
+        // Function to filter valid locations based on search input
+        function filterLocations(searchTerm) {
+            const validLocations = [
+                'Bijolia Rajasthan 311602',
+                'Kota Rajasthan'
+                // Add more locations as needed
+            ];
+
+            return validLocations.filter(location =>
+                location.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        // Function to display filtered locations
+        function displayLocations(locations) {
+            const locationList = document.getElementById('location-list');
+            locationList.innerHTML = '';
+
+            locations.forEach(location => {
+                const option = document.createElement('option');
+                option.value = location;
+                locationList.appendChild(option);
+            });
+        }
+
+        // Function to check if delivery is possible in the entered location
+        function isDeliveryPossible(location) {
+            // Implement your logic to check if delivery is possible based on location
+            // This can involve querying a database or using an API
+            const validLocations = [
+                'Bijolia Rajasthan 311602',
+                'Kota Rajasthan'
+                // Add more locations as needed
+            ];
+
+            // Check if location is in validLocations array (case insensitive)
+            return validLocations.some(validLocation =>
+                validLocation.toLowerCase() === location.trim().toLowerCase()
+            );
+        }
+    </script>
+</body>
+
+</html>
